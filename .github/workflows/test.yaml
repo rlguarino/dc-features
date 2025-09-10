@@ -13,8 +13,10 @@ jobs:
     strategy:
       matrix:
         features:
-          - color
-          - hello
+          - claude-code
+          - go
+          - mise
+          - node
         baseImage:
           - debian:latest
           - ubuntu:latest
@@ -34,8 +36,10 @@ jobs:
     strategy:
       matrix:
         features:
-          - color
-          - hello
+          - claude-code
+          - go
+          - mise
+          - node
     steps:
       - uses: actions/checkout@v4
 
