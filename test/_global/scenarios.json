@@ -1,9 +1,11 @@
 {
-    "mise_and_go": {
+    "all": {
         "image": "mcr.microsoft.com/devcontainers/base:noble",
         "features": {
+            "claude-code": {},
+            "go": {},
             "mise": {},
-            "go": {}
+            "node": {}
         }
     }
 }
