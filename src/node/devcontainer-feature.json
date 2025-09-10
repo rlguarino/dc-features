@@ -11,6 +11,6 @@
         }
     },
     "dependsOn": {
-        "./mise": {}
+        "ghcr.io/rlguarino/dc-features/mise:latest": {}
     }
 }

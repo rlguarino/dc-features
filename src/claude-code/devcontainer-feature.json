@@ -12,6 +12,6 @@
     },
     "dependsOn": {
         // "./mise": {},
-        "./node": {}
+        "ghcr.io/rlguarino/dc-features/node:latest": {}
     }
 }
