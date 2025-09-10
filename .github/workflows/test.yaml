@@ -13,10 +13,10 @@ jobs:
     strategy:
       matrix:
         features:
-          - claude-code
-          - go
+          - claude-code node mise
+          - go mise
           - mise
-          - node
+          - node mise
         baseImage:
           - debian:latest
           - ubuntu:latest
@@ -36,10 +36,10 @@ jobs:
     strategy:
       matrix:
         features:
-          - claude-code
-          - go
+          - claude-code node mise
+          - go mise
           - mise
-          - node
+          - node mise
     steps:
       - uses: actions/checkout@v4
 
