@@ -1,6 +1,6 @@
 {
     "name": "Go",
-    "id": "Go",
+    "id": "go",
     "version": "0.0.1",
     "description": "Install go (via Mise)",
     "options": {
