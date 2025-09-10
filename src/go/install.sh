@@ -1,14 +1,10 @@
 #!/bin/sh
 set -e
+TARGET_GO_VERSION="${VERSION:-"1.25.1"}"
 
-echo "Installing go"
+echo "Installing go (${TARGET_GO_VERSION})"
 
-env
 cd $_REMOTE_USER_HOME
-sudo -u $_REMOTE_USER /usr/local/bin/mise use -g go
-# sudo -u $_REMOTE_USER /usr/local/bin/mise dr
+sudo -u $_REMOTE_USER mise use -g go@${TARGET_GO_VERSION}
 
-# sudo -u $_REMOTE_USER 'eval "$(mise activate bash)"; go version'
-echo 'eval "$(mise activate bash)"' >> $_REMOTE_USER_HOME/.bash_profile
-chown $_REMOTE_USER:$_REMOTE_USER $_REMOTE_USER_HOME/.bash_profile
-# sudo -u $_REMOTE_USER go  version
+sudo -u $_REMOTE_USER -- bash --login -c 'go version'

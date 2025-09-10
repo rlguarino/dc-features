@@ -138,7 +138,7 @@ fi
     
 # fi
 
-check_packages curl ca-certificates # gpg dirmngr gpg-agent
+check_packages curl ca-certificates sudo # gpg dirmngr gpg-agent
 
 URL="https://github.com/jdx/mise/releases/download/${TARGET_MISE_VERSION}/mise-${TARGET_MISE_VERSION}-linux-$arch"
 echo "Dowloading mise from $URL"
@@ -147,14 +147,12 @@ mkdir -p /usr/local/bin
 curl -L ${URL} > /usr/local/bin/mise
 chmod +x /usr/local/bin/mise
 
+mise version
 
+echo 'eval "$(mise activate bash)"' >> $_REMOTE_USER_HOME/.bash_profile
+chown $_REMOTE_USER:$_REMOTE_USER $_REMOTE_USER_HOME/.bash_profile
 
-
-# export PATH=/urs/local/bin:${PATH}
-
-/usr/local/bin/mise version
-
-echo 'eval "$(mise activate bash --shims)"' >> ~/.bash_profile
-echo 'eval "$(mise activate bash)"' >> ~/.bashrc
+cd $_REMOTE_USER_HOME
+sudo -u $_REMOTE_USER -- bash --login -c 'mise version'
 
 clean_up

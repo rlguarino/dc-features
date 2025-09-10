@@ -1,0 +1,11 @@
+{
+    "version_1_24_1": {
+        "image": "mcr.microsoft.com/devcontainers/base:noble",
+        "features": {
+            "mise": {},
+            "go": {
+                "version": "1.24.1"
+            }
+        }
+    }
+}

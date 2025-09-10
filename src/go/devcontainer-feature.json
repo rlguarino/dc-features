@@ -6,7 +6,7 @@
     "options": {
         "version": {
             "type": "string",
-            "default": "latest",
+            "default": "1.25.1",
             "description": "Go version to install"
         }
     },
