@@ -1,0 +1,16 @@
+{
+    "name": "Claude Code",
+    "id": "claude-code",
+    "version": "0.0.1",
+    "description": "Install Claude Code (via Mise)",
+    "options": {
+        "version": {
+            "type": "string",
+            "default": "latest",
+            "description": "Claude Code version to install"
+        }
+    },
+    "dependsOn": {
+        "./mise": {}
+    }
+}
