@@ -40,7 +40,8 @@ source dev-container-features-test-lib
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
-check "validate favorite color" color | grep 'my favorite color is red'
+check "validate mise version" mise version | grep '2025.9.7'
+check "mise doctor" mise doctor
 
 # Report result
 # If any of the checks above exited with a non-zero exit code, the test will fail.

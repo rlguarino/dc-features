@@ -1,9 +1,10 @@
 {
-    "mise_and_go": {
+    "v2024_1_0": {
         "image": "mcr.microsoft.com/devcontainers/base:noble",
         "features": {
-            "mise": {},
-            "go": {}
+            "mise": {
+                "version": "v2024.1.0"
+            }
         }
     }
 }

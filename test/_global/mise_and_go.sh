@@ -16,17 +16,23 @@ set -e
 # Optional: Import test library bundled with the devcontainer CLI
 source dev-container-features-test-lib
 
-echo -e "The result of the 'color' command will be:\n"
-color
-echo -e "The result of the 'hello' command will be:\n"
-hello
+mise dr
+
+echo -e "The result of the 'mise version' command will be:\n"
+mise version
+echo -e "\n"
+echo $SHELL
+echo -e "Env:"
+env
+echo -e "\n"
+echo -e "The result of the 'go version' command will be:\n"
+go version
 echo -e "\n"
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
-check "check purple is my favorite color" bash -c "color | grep 'my favorite color is purple'"
-check "check I am greeting with 'Greetings'" bash -c "hello | grep 'Greetings, $(whoami)'"
-
+check "check mise version" bash -c "mise version | grep '2025.9.7'"
+check "check mise version" go version
 
 # Report result
 # If any of the checks above exited with a non-zero exit code, the test will fail.

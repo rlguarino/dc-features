@@ -1,7 +1,7 @@
 
-# Hello, World! (hello)
+# My Favorite Color (color)
 
-A hello world feature
+A feature to remind you of your favorite color
 
 ## Example Usage
 
@@ -15,7 +15,7 @@ A hello world feature
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| greeting | Select a pre-made greeting, or enter your own | string | hey |
+| favorite | Choose your favorite color. | string | red |
 
 
 
