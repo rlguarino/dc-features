@@ -1,0 +1,16 @@
+{
+    "name": "Node",
+    "id": "node",
+    "version": "0.0.1",
+    "description": "Install Node (via Mise)",
+    "options": {
+        "version": {
+            "type": "string",
+            "default": "latest",
+            "description": "Node version to install"
+        }
+    },
+    "dependsOn": {
+        "./mise": {}
+    }
+}

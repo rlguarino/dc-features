@@ -1,11 +1,10 @@
 {
-    "version_1_0_109": {
+    "version_24_6_0": {
         "image": "mcr.microsoft.com/devcontainers/base:noble",
         "features": {
             "mise": {},
-            "node": {},
-            "claude-code": {
-                "version": "1.0.109"
+            "node": {
+                "version": "24.6.0"
             }
         }
     }
