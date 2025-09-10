@@ -18,21 +18,28 @@ source dev-container-features-test-lib
 
 mise dr
 
-echo -e "The result of the 'mise version' command will be:\n"
-mise version
+echo -e "The result of the 'claude -v' command will be:\n"
+claude -v
 echo -e "\n"
-echo $SHELL
-echo -e "Env:"
-env
-echo -e "\n"
+
 echo -e "The result of the 'go version' command will be:\n"
 go version
 echo -e "\n"
 
+echo -e "The result of the 'mise version' command will be:\n"
+mise version
+echo -e "\n"
+
+echo -e "The result of the 'node -v' command will be:\n"
+node -v
+echo -e "\n"
+
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
+check "check claude -v" claude -v
+check "check go version" go version
 check "check mise version" bash -c "mise version | grep '2025.9.7'"
-check "check mise version" go version
+check "check node version" node -v
 
 # Report result
 # If any of the checks above exited with a non-zero exit code, the test will fail.
