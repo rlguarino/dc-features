@@ -153,6 +153,6 @@ echo 'eval "$(mise activate bash --shims)"' >> $_REMOTE_USER_HOME/.bashrc
 chown $_REMOTE_USER:$_REMOTE_USER $_REMOTE_USER_HOME/.bashrc
 
 cd $_REMOTE_USER_HOME
-sudo -u $_REMOTE_USER -- bash --login -c 'mise version'
+sudo -u $_REMOTE_USER -- bash -c 'mise version'
 
 clean_up

@@ -1,7 +1,7 @@
 {
     "name": "Mise",
     "id": "mise",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Install mise (The front-end to your dev env)",
     "options": {
         "version": {

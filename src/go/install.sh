@@ -6,5 +6,3 @@ echo "Installing go (${TARGET_GO_VERSION})"
 
 cd $_REMOTE_USER_HOME
 sudo -u $_REMOTE_USER mise use -g go@${TARGET_GO_VERSION}
-
-sudo -u $_REMOTE_USER -- bash --login -c 'go version'
