@@ -149,7 +149,7 @@ chmod +x /usr/local/bin/mise
 
 mise version
 
-echo 'eval "$(mise activate bash)"' >> $_REMOTE_USER_HOME/.bash_profile
+echo 'eval "$(mise activate bash --shims)"' >> $_REMOTE_USER_HOME/.bash_profile
 chown $_REMOTE_USER:$_REMOTE_USER $_REMOTE_USER_HOME/.bash_profile
 
 cd $_REMOTE_USER_HOME
