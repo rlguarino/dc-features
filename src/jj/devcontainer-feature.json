@@ -1,0 +1,16 @@
+{
+    "name": "Jujutsu",
+    "id": "jj",
+    "version": "0.0.4",
+    "description": "Install Jujutsu VCS (via Mise)",
+    "options": {
+        "version": {
+            "type": "string",
+            "default": "latest",
+            "description": "Jujutsu version to install"
+        }
+    },
+    "dependsOn": {
+        "ghcr.io/rlguarino/dc-features/mise:latest": {}
+    }
+}

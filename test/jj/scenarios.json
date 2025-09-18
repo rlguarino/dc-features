@@ -1,0 +1,11 @@
+{
+    "version_0_32_0": {
+        "image": "mcr.microsoft.com/devcontainers/base:noble",
+        "features": {
+            "mise": {},
+            "jj": {
+                "version": "0.32.0"
+            }
+        }
+    }
+}
