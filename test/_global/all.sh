@@ -38,7 +38,7 @@ echo -e "\n"
 # The 'check' command comes from the dev-container-features-test-lib.
 check "check claude -v" claude -v
 check "check go version" go version
-check "check mise version" bash -c "mise version | grep '2025.9.7'"
+check "check mise version" mise version
 check "check node version" node -v
 
 # Report result

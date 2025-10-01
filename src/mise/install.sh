@@ -1,7 +1,15 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -euxo pipefail
 
-TARGET_MISE_VERSION="${VERSION:-"v2025.9.7"}"
+# This version check needs to be the first thing in this script.
+# If it's not VERSION is set to something related to the version of ubuntu.
+if [ -z "${VERSION:-}" ] || [ "${VERSION}" = "latest" ]; then
+    echo "Installing latest version of mise"[]
+else
+    MISE_VERSION="${VERSION}"
+    export MISE_VERSION
+    echo "Installing mise, version: ${MISE_VERSION}"
+fi
 
 # The 'install.sh' entrypoint script is always executed as the root user.
 #
@@ -33,8 +41,6 @@ else
     exit 1
 fi
 
-
-
 # Setup INSTALL_CMD & PKG_MGR_CMD
 if type apt-get > /dev/null 2>&1; then
     PKG_MGR_CMD=apt-get
@@ -62,6 +68,7 @@ clean_up() {
             rm -rf ${GPG_INSTALL_PATH}
             ;;
     esac
+    rm -f mise-install.sh
 }
 clean_up
 
@@ -113,46 +120,22 @@ check_packages() {
     esac
 }
 
-# From the Mise install.sh on github
-musl=""
-if type ldd >/dev/null 2>/dev/null; then
-    libc=$(ldd /bin/ls | grep 'musl' | head -1 | cut -d ' ' -f1)
-    if [ -n "$libc" ]; then
-        musl="-musl"
-    fi
-fi
-    arch="$(uname -m)"
-if [ "$arch" = x86_64 ]; then
-    arch="x64$musl"
-elif [ "$arch" = aarch64 ] || [ "$arch" = arm64 ]; then
-    arch="arm64$musl"
-elif [ "$arch" = armv7l ]; then
-    arch="armv7$musl"
-else
-    error "unsupported architecture: $arch"
-fi
+check_packages curl ca-certificates sudo gpg dirmngr gpg-agent
 
+echo "Downloading mise install script"
+gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 0x7413A06D
+curl https://mise.jdx.dev/install.sh.sig | gpg --decrypt > mise-install.sh
 
-# # Install curl, git, other dependencies if missing
-# if ! type curl > /dev/null 2>&1; then
-    
-# fi
+echo "Running mise install script"
+export MISE_INSTALL_PATH="/usr/local/bin/mise"
+export MISE_DEBUG=1
+sh mise-install.sh
 
-check_packages curl ca-certificates sudo # gpg dirmngr gpg-agent
-
-URL="https://github.com/jdx/mise/releases/download/${TARGET_MISE_VERSION}/mise-${TARGET_MISE_VERSION}-linux-$arch"
-echo "Dowloading mise from $URL"
-
-mkdir -p /usr/local/bin
-curl -L ${URL} > /usr/local/bin/mise
-chmod +x /usr/local/bin/mise
-
-mise version
-
-echo 'eval "$(mise activate bash --shims)"' >> $_REMOTE_USER_HOME/.bashrc
+echo "Activating mise"
+echo 'eval "$(/usr/local/bin/mise activate bash)"' >> $_REMOTE_USER_HOME/.bashrc
 chown $_REMOTE_USER:$_REMOTE_USER $_REMOTE_USER_HOME/.bashrc
 
-cd $_REMOTE_USER_HOME
-sudo -u $_REMOTE_USER -- bash -c 'mise version'
-
 clean_up
+
+sudo -u $_REMOTE_USER -- bash -c '/usr/local/bin/mise version'
+echo "Done installing mise"
