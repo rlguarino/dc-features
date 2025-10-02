@@ -28,4 +28,4 @@ Install mise (The front-end to your dev env)
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/rlguarino/dc-features/blob/main/src/mise/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
