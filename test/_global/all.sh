@@ -15,8 +15,7 @@ set -e
 
 # Optional: Import test library bundled with the devcontainer CLI
 source dev-container-features-test-lib
-
-mise dr
+mise doctor
 
 echo -e "The result of the 'claude -v' command will be:\n"
 claude -v
