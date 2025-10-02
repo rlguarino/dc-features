@@ -4,7 +4,6 @@
         "features": {
             "claude-code": {},
             "go": {},
-            "mise": {},
             "node": {}
         }
     }
