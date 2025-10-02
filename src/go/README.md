@@ -1,7 +1,7 @@
 
 # Go (go)
 
-Install go (via Mise)
+Install go (via Mise) test
 
 ## Example Usage
 
@@ -15,10 +15,10 @@ Install go (via Mise)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | Go version to install | string | 1.25.1 |
+| version | Go version to install | string | latest |
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/rlguarino/dc-features/blob/main/src/go/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

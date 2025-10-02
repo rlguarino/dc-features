@@ -1,12 +1,12 @@
 {
     "name": "Go",
     "id": "go",
-    "version": "0.0.4",
-    "description": "Install go (via Mise)",
+    "version": "0.0.5",
+    "description": "Install go (via Mise) test",
     "options": {
         "version": {
             "type": "string",
-            "default": "1.25.1",
+            "default": "latest",
             "description": "Go version to install"
         }
     },
