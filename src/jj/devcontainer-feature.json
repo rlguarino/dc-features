@@ -1,7 +1,7 @@
 {
     "name": "Jujutsu",
     "id": "jj",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Install Jujutsu VCS (via Mise)",
     "options": {
         "version": {
