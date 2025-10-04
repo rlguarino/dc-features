@@ -10,10 +10,12 @@
                         ],
                         "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
                     }
-                ]
+                ],
+                "git.enabled": false
             },
             "extensions": [
-                "mads-hartmann.bash-ide-vscode"
+                "mads-hartmann.bash-ide-vscode",
+                "jjk.jjk"
             ]
         }
     },
