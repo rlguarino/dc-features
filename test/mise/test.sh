@@ -38,7 +38,7 @@ set -e
 source dev-container-features-test-lib
 
 # Feature-specific tests
-# The 'check' command comes from the dev-container-features-est-lib. Syntax is...
+# The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
 # check "mise doctor" mise doctor
 check "mise version" mise version
